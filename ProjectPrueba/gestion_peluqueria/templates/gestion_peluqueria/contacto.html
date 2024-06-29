@@ -1,0 +1,63 @@
+{% extends 'gestion_peluqueria/base.html' %}
+{% load static %}
+
+{% block titulo %}Contacto{% endblock %}
+
+
+{% block content %}
+
+
+<section class="hero-contacto">
+    <h1 class="titulo-h1 centrar saludo">Escribenos...</h1>
+    <div class="form-contacto">
+        <form class="formulario" id="id_contacto" method="post" onsubmit="return false">
+            {% csrf_token %}
+            <div class="form-col">
+                <div class="input-2-col der2izq">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+                </div>
+                <p class="izq2der">
+                    <input type="email" name="email" id="email" class="input-2-col font-input-normal" placeholder="Ingrese su correo electrónico">
+                </p>
+                <p class="mensaje der2izq">
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Déjanos tu mensaje..."></textarea>
+                </p>
+                <div class="radio_sexo content-form izq2der">
+                    <p class="color-text-form">Sexo:</p>
+                    <label><input type="radio" name="sexo" value="F">Hombre</label>
+                    <label><input type="radio" name="sexo" value="M">Mujer</label>
+                    <label><input type="radio" name="sexo" value="N">No Binario</label>
+                </div>
+                <div class="select_tc content-form der2izq">
+                    <p class="color-text-form">Tipo de consulta:</p>
+                    <p>
+                        <select class="tipo_consulta" id="tipo_consulta" size="3" onchange="mostrarInputFile()">
+                            <option value="1">Nuestros servicios</option>
+                            <option value="2">Proveedores</option>
+                            <option value="3">Quiero este peinado</option>
+                            <option value="4">Cursos</option>
+                            <option value="5" selected="selected">Otro tipo de consulta</option>
+                        </select>
+                    </p>
+                </div>
+                <div class="upload_file content-form" id="div_imagen">
+                    <p class="color-text-form">Sube una imagen de qué peinado te gustaría...</p>
+                    <p><input type="file" id="archivo" onchange="validarImagen()"></p>
+                </div>
+                <div class="aba2arr">
+                    <input class="enviar pointer" id="btn-enviar" type="submit" value="Enviar">
+                </div>
+            </div>
+        </form>
+        <p id="error-carga">Error de datos cargados</p>
+        <p id="enviado">Mensaje Enviado! Muchas gracias por su contacto!</p>
+    </div>
+</section>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/contacto.js' %}"></script>
+{% endblock %}

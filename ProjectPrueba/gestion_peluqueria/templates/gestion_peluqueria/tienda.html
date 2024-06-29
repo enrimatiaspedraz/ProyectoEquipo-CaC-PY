@@ -1,0 +1,84 @@
+
+{% extends 'gestion_peluqueria/base.html' %}
+
+{% load static %}
+
+{% block titulo %}Tienda{% endblock %}
+
+
+
+{% block content %}
+
+<section class="contenedor-tienda der2izq">
+    <h1 class="titulo-tienda">Nuestros Productos</h1>
+    <!-- Contenedor de elementos -->
+    <div class="contenedor-items">
+        <div class="item">
+            <span class="titulo-item">Cepillo bolsillo de Cerdas</span>
+
+            <img src="{% static 'images/articulo1.jpeg' %}" alt="imagen-producto" class="img-item">
+            <span class="precio-item">$15.000</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+
+        <div class="item">
+            <span class="titulo-item">Kit 3 piezas Barberia</span>
+            <img src="{% static 'images/articulo3.jpeg' %}" alt="imagen-producto" class="img-item">
+            <span class="precio-item">$25.000</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+
+        <div class="item">
+            <span class="titulo-item">Afeitadora Metalica BENETHON</span>
+            <img src="{% static 'images/articulo2.jpeg' %}" alt="imagen-producto" class="img-item">
+            <span class="precio-item">$35.000</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+
+        <div class="item">
+            <span class="titulo-item">Maquina cortadora de Pelo</span>
+            <img src="{% static 'images/articulo4.jpeg' %}" alt="imagen-producto" class="img-item">
+            <span class="precio-item">$18.000</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+
+        <div class="item">
+            <span class="titulo-item">Afeitadora de Doble Hoja PRIMAX</span>
+            <img src="{% static 'images/articulo5.jpeg' %}" alt="imagen-producto" class="img-item">
+            <span class="precio-item">$32.000</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+
+        <div class="item">
+            <span class="titulo-item">Cortadora de Pelo + Kit de Tijeras</span>
+            <img src="{% static 'images/articulo6.jpeg' %}" alt="imagen-producto" class="img-item">
+            <span class="precio-item">$18.000</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+
+        <div class="item">
+            <span class="titulo-item">Difusor Modelador</span>
+            <img src="{% static 'images/articulo7.jpeg' %}" alt="imagen-producto" class="img-item">
+            <span class="precio-item">$54.000</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+
+        <div class="item">
+            <span class="titulo-item">Secador de Pelo Altro</span>
+            <img src="{% static 'images/articulo8.jpeg' %}" alt="imagen-producto" class="img-item">
+            <span class="precio-item">$32.000</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+
+        <div class="item">
+            <span class="titulo-item">Secador de Pelo Profesional</span>
+            <img src="{% static 'images/articulo9.jpeg' %}" alt="imagen-producto" class="img-item">
+            <span class="precio-item">$42.800</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
