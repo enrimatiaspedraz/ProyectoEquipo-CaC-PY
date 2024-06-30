@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -15,5 +15,7 @@ urlpatterns = [
      path('eliminarTurno/<id>', views.eliminarTurno),
      path('edicionTurno/<id>', views.edicionTurno),
      path('editarTurno/', views.editarTurno),
+     path('accounts/', include('django.contrib.auth.urls')),
+     path('logout/', views.exit, name='exit'),
   
 ]

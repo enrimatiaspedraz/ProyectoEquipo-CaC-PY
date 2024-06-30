@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Turno
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 # Create your views here.
 
 
@@ -30,6 +32,7 @@ def nosotros(request):
 
 # Codigo ClassTurno
 
+@login_required
 def gestionTurno(request):
     turnosListados = Turno.objects.all()
     return render(request, 'gestion_peluqueria/gestionTurno.html', {'turnos': turnosListados})
@@ -70,4 +73,12 @@ def editarTurno(request):
     turno.save()
     
     return redirect('/gestionTurno/') 
+
+# CODIGO LOGIN Y LOGOUT
+
+def exit(request):
+    logout(request)
+    return redirect('/home/')
+
+
 
